@@ -1,0 +1,168 @@
+
+.extension-container {
+  position: relative;
+  background: #e0e5ec; /* Base color */
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  box-shadow: 10px 10px 20px #bebec3, -10px -10px 20px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.extension-header {
+  text-align: center;
+}
+
+.extension-footer {
+  text-align: left;
+}
+
+.logo-container {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo {
+  width: 80px; /* Adjust size accordingly */
+  height: auto;
+}
+
+.extension-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px; /* Adjust padding to position buttons */
+  z-index: 2; /* Make sure it's above the circles but below the language toggle */
+}
+
+.inner-circle {
+  background: #e0e5ec; /* Base color */
+  border-radius: 50%;
+  width: 90%; /* Adjust size accordingly */
+  height: 90%; /* Adjust size accordingly */
+  box-shadow: inset 5px 5px 10px #bebec3, inset -5px -5px 10px #ffffff;
+  position: absolute;
+  z-index: 1; /* Below the buttons */
+  margin-top: 10px;
+}
+
+.innermost-circle {
+  background: #e0e5ec; /* Base color */
+  border-radius: 50%;
+  width: 80%; /* Adjust size accordingly */
+  height: 80%; /* Adjust size accordingly */
+  box-shadow: 5px 5px 10px #bebec3, -5px -5px 10px #ffffff;
+  position: absolute;
+  margin-top: 27px;
+  margin-right: 3px;
+  z-index: 2; /* Above the first inner circle, below the buttons */
+  
+}
+
+.button {
+  position: absolute;
+  width: 64px; /* Adjust size accordingly */
+  height: 64px; /* Adjust size accordingly */
+  background: #e2ebf0; /* Button background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 3; /* Make sure buttons are above the layers */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add a smooth transition */
+  overflow: hidden; /* Prevents icon cut-off */
+}
+
+.follow {
+  bottom: -1px; /* Half the height of the button to center */
+  left: 40%;
+}
+
+.data {
+  top: 40%;
+  left: 1%;
+}
+
+.agent {
+  top: 40%;
+  right: -1px; /* Half the width of the button to center */
+}
+
+.button img {
+  width: 30px; /* Adjust size accordingly */
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.button:hover {
+  transform: translateY(-10px); /* Animate all buttons on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Add a shadow on hover */
+}
+
+.button:hover img {
+  filter: grayscale(0);
+}
+
+.extension-footer {
+  position: absolute;
+  bottom: -10%; /* Adjust this to push the footer below everything else */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Higher than all other elements */
+}
+
+.extension-footer img {
+  width: 24px; /* Adjust size accordingly */
+  cursor: pointer;
+}
+
+/* Layered circles using pseudo-elements */
+.extension-container::before,
+.extension-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.extension-container::before {
+  top: 10%;
+  left: 10%;
+  bottom: 10%;
+  right: 10%;
+  background: linear-gradient(145deg, #b1bcc7, #f0f5f9);
+  box-shadow: 
+    inset 5px 5px 10px #a1b1b8,
+    inset -5px -5px 10px #ffffff;
+}
+
+.extension-container::after {
+  top: 15%;
+  left: 15%;
+  bottom: 15%;
+  right: 15%;
+  background: #f4f4f4;
+  box-shadow: 
+    inset 2px 2px 2px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Add more styles for the language toggle and fine-tune the colors */

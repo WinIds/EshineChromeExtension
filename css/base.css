@@ -1,0 +1,81 @@
+/* base.css */
+ /* * {  */
+
+
+ /* }  */
+ 
+ body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #63a4ff 10%, #83eaf1 90%);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+ /* body { */
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* background: radial-gradient(circle at top right, #15779e, #154c79 70%, #102c4b); */
+  /* color: #fff; */
+/* } */
+
+
+.extension-container .rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.extension-container .rtl .some-element {
+    margin-left: auto; /* Example: flip if you have margin-right for LTR */
+    margin-right: 10px; /* Example: flip if you have margin-left for LTR */
+}
+
+.extension-container .rtl .text-element {
+    text-align: right;
+}
+
+.extension-container .rtl .flex-container {
+    flex-direction: row-reverse; /* For horizontal flex containers */
+}
+
+.extension-container .rtl .grid-container {
+    direction: rtl; /* Grids often work better with 'direction: ltr' even in RTL */
+}
+
+.extension-container .rtl .icon {
+    transform: scaleX(-1); /* Flips the icon horizontally */
+}
+
+.extension-container .rtl .float-element {
+    float: right; /* Flip if you have 'float: left' for LTR */
+}
+
+
+.extension-container .rtl .header {
+    transform: scaleX(1);
+}

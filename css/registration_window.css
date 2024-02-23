@@ -1,0 +1,99 @@
+/* window_popup.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 500px; 
+  height: 500px; 
+  box-sizing: border-box; 
+  margin: 0;  
+  padding: 0;
+  background: linear-gradient(135deg, #85d8ff, #1fb6ff, #009eeb);
+  background-size: 400% 400%;
+  animation: GradientShift 10s ease infinite;
+}
+
+@keyframes GradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Set a max-width for larger screens */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Ensure it's a block-level element */
+    width: 100%; /* Button should occupy full container width */
+    box-sizing: border-box; /* Border and padding should be included in width */
+    margin-top: 20px; /* Space above the button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block; /* Make labels block-level for better structure */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+/* Rest of the styles remain the same */
+
+
+.modal .modal-content p {
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center align the text */
+}
+
+
+.modal{
+  display: block; /* Show the modal by default */
+}
+
+.modal .modal-content p {
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center align the text */
+}
+
+
+.modal .modal-content .close-btn:hover {
+    color: #333; /* Darker color when hovered */
+}
+
+/* Add more styles as needed for other elements */

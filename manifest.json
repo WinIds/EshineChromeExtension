@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "HRJet",
+  "version": "1.0",
+  "default_locale": "en",
+  "description": "Upgrade your LinkedIn experience with HRJet",
+  "host_permissions": ["http://127.0.0.1:5000/"],
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "cookies",
+    "<all_urls>",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon.png"
+  },
+ "content_scripts": [
+  {
+    "matches": [
+      "https://jobs.careers.microsoft.com/*",
+      "https://nvidia.wd5.myworkdayjobs.com/*",
+      "https://elbitsystemscareer.com/*"
+      // Add more patterns as necessary
+    ],
+    "js": ["js/job_details_extractor.js"],
+    "run_at": "document_idle"
+  }
+],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+ "web_accessible_resources": [
+  "css/job_extraction_window.css",
+  "js/job_details_extractor.js",
+  "css/registration_window.css",
+  "icons/*"
+]
+}

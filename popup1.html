@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRJet Chrome Extension</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<div class="extension-container">
+<div class="inner-circle"></div>
+<div class="innermost-circle">
+  <header class="extension-header">
+	<div class="logo-container">
+	  <img src="icons/icon.png" alt="HRJet Logo" class="logo">
+	</div>
+  </header>
+  <main class="extension-body">
+	<div class="button-container">
+	  <button class="button follow" title="Follow This Account">
+		<img src="icons/follow.png" alt="">
+		<span id="follow-tooltip" class="tooltip-text"></span>
+	  </button>
+	  <button class="button data" title="See Latest Data">
+		<img src="icons/data.png" alt="">
+		<span id="see-data-tooltip" class="tooltip-text"></span>
+	  </button>
+	  <button class="button agent" title="Launch Agent">
+		<img src="icons/launch.png" alt="">
+		<span id="check-candidate-tooltip" class="tooltip-text"></span>
+	  </button>
+	</div>
+  </main>
+	</div>
+	<footer class="extension-footer">
+	<div class="language-toggle" id="language-toggle">
+	  <button id="switch-lang-btn">
+		<span id="language-label" class="language-label">Language:</span>
+		<div class="lang-flag">
+		  <img src="icons/us-icon.png" alt="English">
+		</div>
+		<div class="lang-flag hidden">
+		  <img src="icons/israel-icon.png" alt="Hebrew" >
+		</div>
+	  </button>
+	</div>
+    </footer>
+</div>
+</html>

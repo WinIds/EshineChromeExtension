@@ -1,0 +1,58 @@
+/* buttons.css - Styles specific to buttons */
+
+.button-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10; /* Make sure it's above the circles but below the language toggle */
+}
+
+.button {
+  position: absolute;
+  width: 64px; /* Adjust size accordingly */
+  height: 64px; /* Adjust size accordingly */
+  background: #e2ebf0; /* Button background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Make sure buttons are above the layers */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add a smooth transition */
+}
+
+.follow {
+  bottom: -1px; /* Half the height of the button to center */
+  left: 40%;
+}
+
+.data {
+  top: 40%;
+  left: 1%;
+}
+
+.agent {
+  top: 40%;
+  right: -1px; /* Half the width of the button to center */
+}
+
+.button img {
+  width: 30px; /* Adjust size accordingly */
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.button:hover {
+  transform: translateY(-10px); /* Animate all buttons on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Add a shadow on hover */
+}
+
+.button:hover img {
+  filter: grayscale(0);
+}

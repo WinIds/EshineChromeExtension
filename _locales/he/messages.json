@@ -1,0 +1,27 @@
+
+{
+  "follow": {
+    "message": "עקוב אחר המשתמש"
+  },
+  "see_data": {
+    "message": "ראה מידע אחרון"
+  },
+  "invalid_linkedin_url": {
+    "message": "כתובת ה-URL אינה דף פרופיל LinkedIn חוקי."
+  },
+  "successful_follow_profile": {
+    "message": "מעקב בוצע בהצלחה"
+  },
+  "successful_unfollow_profile": {
+    "message": "ביטול מעקב בוצע בהצלחה"
+  },
+  "language": {
+    "message": "שפה :"
+  },
+  "check_candidate": {
+    "message": "בדוק מועמד"
+  },
+  "download_json": {
+    "message": "הורד JSON"
+  }
+}

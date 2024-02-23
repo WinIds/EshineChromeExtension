@@ -1,0 +1,153 @@
+/* layout.css - Layout specific styles */
+
+.popup-container {
+  position: relative;
+  background: #e0e5ec; /* Base color */
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  box-shadow: 10px 10px 20px #bebec3, -10px -10px 20px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e5ec; /* Base color */
+  border: 5px solid #d1d8e0; /* Slim ring color */
+}
+
+.extension-header {
+  text-align: center;
+}
+
+/* Exclude header icons from flipping */
+/* #extension-header, #extension-header * { */
+    /* direction: ltr !important; /* Force LTR direction */ */
+    /* text-align: left !important; /* Align text to the left */ */
+    /* transform: none !important; /* Prevent any transformations */ */
+/* } */
+
+.extension-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.extension-footer img {
+  width: 24px; /* Adjust size accordingly */
+  cursor: pointer;
+}
+
+.extension-footer {
+  text-align: left;
+  display: flex;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Higher than all other elements */
+}
+
+.logo-container {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo {
+  width: 80px; /* Adjust size accordingly */
+  height: auto;
+}
+
+/* #extension-logo { */
+    /* width: 120px; */
+    /* height: auto; */
+    /* margin-right: 10px; */
+/* } */
+
+/* #extension-name { */
+    /* font-size: 24px; */
+    /* color: #333; */
+/* } */
+
+/* Innermost circle - this creates the main circle */
+.innermost-circle {
+  background: #e0e5ec;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  right: 35px;
+  bottom: 35px;
+  z-index: 50;
+}
+
+
+/* Ring - this creates the thin ring effect */
+.inner-circle {
+  border: 5px solid #d1d9e0; /* Adjust the color and size to create the ring effect */
+  border-radius: 50%;
+  width: calc(80% + 20px); /* This should be the diameter of the inner circle plus twice the border width */
+  height: calc(80% + 20px); /* Same as width */
+  position: absolute;
+  z-index: 2; /* Above the innermost circle */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the circle using transform */
+}
+
+/* .inner-circle { */
+  /* background: #e0e5ec; /* Base color */ */
+  /* border-radius: 50%; */
+  /* width: 90%; /* Adjust size accordingly */ */
+  /* height: 90%; /* Adjust size accordingly */ */
+  /* box-shadow: inset 5px 5px 10px #bebec3, inset -10px -5px 10px #ffffff; */
+  /* position: absolute; */
+  /* z-index: 1; /* Below the buttons */ */
+  /* margin-top: 10px; */
+  /* margin-left: 20px; */
+/* } */
+
+/* .innermost-circle { */
+  /* background: #e0e5ec; /* Base color */ */
+  /* border-radius: 50%; */
+  /* width: 80%; /* Adjust size accordingly */ */
+  /* height: 80%; /* Adjust size accordingly */ */
+  /* box-shadow: 5px 5px 10px #bebec3, -5px -5px 10px #ffffff; */
+  /* position: absolute; */
+  /* right: 33px; */
+  /* margin-top: 27px; */
+  /* z-index: 2; /* Above the first inner circle, below the buttons */ */
+/* } */
+
+
+/* Layered circles using pseudo-elements */
+.popup-container::before,
+.popup-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.popup-container::before {
+  top: 10%;
+  left: 10%;
+  bottom: 10%;
+  right: 10%;
+  background: linear-gradient(145deg, #b1bcc7, #f0f5f9);
+  box-shadow: 
+    inset 5px 5px 10px #a1b1b8,
+    inset -5px -5px 10px #ffffff;
+}
+
+.popup-container::after {
+  top: 15%;
+  left: 15%;
+  bottom: 15%;
+  right: 15%;
+  background: #f4f4f4;
+  box-shadow: 
+    inset 2px 2px 2px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Add more layout-related styles as needed */

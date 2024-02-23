@@ -1,0 +1,40 @@
+/* tooltip.css - Styles for tooltips */
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px; /* Adjust to center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+button:hover .tooltip-text, 
+a:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+	z-index: 2000;
+}
+
+
+
+/* Add any additional styles or variations for different tooltip types */

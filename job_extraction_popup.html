@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details Extraction</title>
+    <link rel="stylesheet" href="css/job_extraction_window.css">
+</head>
+<body>
+	<div id="jobDetailsContainer">
+        <h2>Job Details</h2>
+        <div id="jobDescription"></div>
+        <div id="jobRequirements"></div>
+    </div>
+    <div class="container">
+        <h1>Extract Job Details</h1>
+        <input type="text" id="job-url" placeholder="Enter job URL here" autofocus>
+        <button id="extract-btn">Extract Details</button>
+		<button type="button" id="go-back-btn">Go Back</button> <!-- Go Back Button -->
+    </div>
+    <script src="js/job_extraction_popup.js"></script>
+</body>
+</html>

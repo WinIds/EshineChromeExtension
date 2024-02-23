@@ -1,0 +1,27 @@
+
+{
+  "follow": {
+    "message": "Follow this account"
+  },
+  "see_data": {
+    "message": "See Latest Data"
+  },
+  "invalid_linkedin_url": {
+    "message": "The URL is not a valid LinkedIn profile page."
+  },
+  "successful_follow_profile": {
+    "message": "Follow was done successfuly"
+  },
+  "successful_unfollow_profile": {
+    "message": "Unfollow was done successfuly"
+  },
+  "language": {
+    "message": "Language :"
+  },
+  "check_candidate": {
+    "message": "Check Candidate"
+  },
+  "download_json": {
+    "message": "Download JSON"
+  }
+}

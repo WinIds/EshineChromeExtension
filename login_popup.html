@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/login_window.css">
+</head>
+<body>
+  <h1>HRJet Login</h1>
+  <form id="login-form" class="modal">
+    <div class="modal-content">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required minlength="3">
+      
+      <button type="submit" id="login-button" class="agree-btn">Login</button>
+      <button type="button" id="go-back-btn" class="agree-btn">Go Back</button> <!-- Go Back Button -->
+    </div>
+  </form>
+  <script src="js/login_popup.js"></script>
+</body>
+</html>

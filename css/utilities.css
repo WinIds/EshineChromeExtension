@@ -1,0 +1,28 @@
+/* utilities.css - Reusable utility classes */
+
+.hidden {
+    display: none; 
+}
+
+/* .mt-10 { margin-top: 10px; } */
+/* .mb-10 { margin-bottom: 10px; } */
+/* .ml-10 { margin-left: 10px; } */
+/* .mr-10 { margin-right: 10px; } */
+
+/* .pt-10 { padding-top: 10px; } */
+/* .pb-10 { padding-bottom: 10px; } */
+/* .pl-10 { padding-left: 10px; } */
+/* .pr-10 { padding-right: 10px; } */
+
+/* .text-center { text-align: center; } */
+/* .text-right { text-align: right; } */
+/* .text-left { text-align: left; } */
+
+/* .flex { display: flex; } */
+/* .flex-column { flex-direction: column; } */
+/* .flex-row { flex-direction: row; } */
+
+/* .justify-center { justify-content: center; } */
+/* .align-center { align-items: center; } */
+
+/* Add more utility classes as needed */
