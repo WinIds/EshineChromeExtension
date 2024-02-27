@@ -23,5 +23,11 @@
   },
   "download_json": {
     "message": "הורד JSON"
+  },  
+  "show_latest": {
+    "message": "הצג עדכונים אחרונים"
+  },
+  "generate": {
+    "message": "ג'נרט פנייה ראשונית"
   }
 }

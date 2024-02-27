@@ -1,5 +1,9 @@
+
+
+
 let activeExtensionTabId = null; // Variable to store the active tab ID
 let isFirstClick = true;
+let isFirstGenerateClick = true;
 
 
 chrome.browserAction.onClicked.addListener(function(tab) {
@@ -141,56 +145,22 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 });
 
-chrome.runtime.onMessage.addListener(async function(request, sender, sendResponse) {
-    if (request.action === "extractJobDetails") {
-        try {
-            const data = await extractJobDetails(request.jobUrl);
-            sendResponse({success: true, data: data});
-        } catch (error) {
-            console.error(error);
-            sendResponse({success: false, message: error.message});
-        }
-        return true; // indicates an asynchronous response
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.action === "checkGenerateClicked") {
+        // Use chrome.storage to keep track of the first click
+		if (isFirstGenerateClick) {
+			// It's the first click, set the popup accordingly
+			isFirstGenerateClick = false;
+			 // Set to the job details extraction popup if it's the first click
+			chrome.browserAction.setPopup({popup: "job_extraction_popup.html"});
+		} else {
+		// Set to the main popup otherwise
+		chrome.browserAction.setPopup({popup: "popup.html"});
+		}
     }
 });
 
-// Simulate an asynchronous operation such as fetching data
-async function extractJobDetails(jobUrl) {
-    return new Promise((resolve, reject) => {
-        // Example of opening a tab and waiting for content to be ready
-        chrome.tabs.create({ url: jobUrl, active: false }, function(tab) {
-            // Listen for tab update to check when the page is fully loaded
-            chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo) {
-                if (tabId === tab.id && changeInfo.status === 'complete') {
-                    // Remove listener to prevent future invocations
-                    chrome.tabs.onUpdated.removeListener(listener);
 
-                    // Execute script in the new tab
-                    chrome.tabs.executeScript(tab.id, {file: 'js/job_details_extractor.js'}, () => {
-                        if (chrome.runtime.lastError) {
-                            // Handle error, possibly script injection failed
-                            sendResponse({error: chrome.runtime.lastError.message});
-                            return;
-                        }
-
-                        // Setup a one-time listener for a response from the content script
-                        chrome.runtime.onMessage.addListener(function responseListener(response) {
-                            if (response.action === "jobDetailsExtracted") {
-                                sendResponse({data: response.data});
-                                // Clean up: close the tab and remove listener
-                                chrome.tabs.remove(tab.id);
-                                chrome.runtime.onMessage.removeListener(responseListener);
-                            }
-                        });
-                    });
-                    return true; // keep the message channel open for the async response
-                }
-            });
-        });
-
-        return true; // Indicates asynchronous response to keep the message channel open
-    });
-};
 
 
 

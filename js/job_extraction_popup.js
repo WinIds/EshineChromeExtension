@@ -1,25 +1,14 @@
+//job_extraction_popup.js
+
+import { matchToJob, generateContact } from './api.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('extract-btn').addEventListener('click', function() {
-        const jobUrl = document.getElementById('job-url').value.trim();
-        if (jobUrl) {
-            // Wrap sendMessage in a promise to handle asynchronous response
-            sendMessageToBackground({ action: "extractJobDetails", jobUrl: jobUrl })
-            .then(response => {
-                // Process and display extracted job details
-                if (response && response.data) {
-                    console.log('Extracted job details:', response.data);
-                    // Here you would update the UI with the extracted job details
-                } else {
-                    alert("Failed to extract job details.");
-                }
-            })
-            .catch(error => {
-                console.error("Error extracting job details:", error);
-                alert("Failed to extract job details.");
-            });
-        } else {
-            alert("Please enter a valid job URL.");
-        }
+       matchToJob();
+    });
+	
+	document.getElementById('generate-btn').addEventListener('click', function() {
+       generateContact();
     });
 	
     const goBackBtn = document.getElementById('go-back-btn');
@@ -42,3 +31,5 @@ function sendMessageToBackground(message) {
         });
     });
 }
+
+

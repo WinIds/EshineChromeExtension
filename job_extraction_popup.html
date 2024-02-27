@@ -13,11 +13,13 @@
         <div id="jobRequirements"></div>
     </div>
     <div class="container">
-        <h1>Extract Job Details</h1>
+        <h1>Compare Profile and Job</h1>
         <input type="text" id="job-url" placeholder="Enter job URL here" autofocus>
-        <button id="extract-btn">Extract Details</button>
+		<input type="text" id="profile-url" placeholder="Enter profile URL here" autofocus>
+        <button id="extract-btn">Check Candidate</button>
+		<button id="generate-btn">Generate Contact</button>
 		<button type="button" id="go-back-btn">Go Back</button> <!-- Go Back Button -->
     </div>
-    <script src="js/job_extraction_popup.js"></script>
+    <script type="module" src="js/job_extraction_popup.js"></script>
 </body>
 </html>

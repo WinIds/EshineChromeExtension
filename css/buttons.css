@@ -41,6 +41,16 @@
   right: -1px; /* Half the width of the button to center */
 }
 
+.latest {
+  bottom: 30px; /* Half the height of the button to center */
+  left: 10%;
+}
+
+.generate {
+  bottom: 30px; /* Half the height of the button to center */
+  left: 70%;
+}
+
 .button img {
   width: 30px; /* Adjust size accordingly */
   height: auto;

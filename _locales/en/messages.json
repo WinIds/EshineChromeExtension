@@ -23,5 +23,11 @@
   },
   "download_json": {
     "message": "Download JSON"
+  },
+  "show_latest": {
+    "message": "Show Latest Updated"
+  },
+  "generate": {
+    "message": "Generate Initial Contact"
   }
 }

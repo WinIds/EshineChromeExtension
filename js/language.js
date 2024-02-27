@@ -78,6 +78,12 @@ function updateUIForLanguage(lang, isInit, isReEntry = false) {
 	const launchAgentMessageKey = 'check-candidate'.toLowerCase().replace(/-/g, '_');
 	document.getElementById('check-candidate-tooltip').textContent = getMessage(launchAgentMessageKey);
 	
+	const ShowLatestMessageKey = 'show-latest'.toLowerCase().replace(/-/g, '_');
+	document.getElementById('show-latest-tooltip').textContent = getMessage(ShowLatestMessageKey);
+	
+	const GenerateMessageKey = 'generate'.toLowerCase().replace(/-/g, '_');
+	document.getElementById('generate-tooltip').textContent = getMessage(GenerateMessageKey);
+	
 }
 
 
