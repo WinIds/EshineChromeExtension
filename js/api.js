@@ -54,7 +54,7 @@ function attachEventListeners() {
 
 
 function getScrappedData(profileUniqueId) {
-    getScraperResult(`${HTTPS_HOST}/SmartProfile/SmartProfile/Stats/${encodeURIComponent(profileUniqueId)}?accept=text/plain`)
+    getScraperResult(`${HTTPS_HOST}/CustomerUserActions/Profile/Stats/${encodeURIComponent(profileUniqueId)}?accept=text/plain`)
     .then(data => {
         console.log('Scraper data:', data);
         displayScrapedData(data);
@@ -239,10 +239,10 @@ async function followProfile() {
 			const errorMsg = getMessage('invalid_linkedin_url');
 			const postData = {
 							 ProfileSourceType: 1,
-							 ProfileId: currentUrl
+							 ProfileUniqueUrl: currentUrl
 							};
 							
-			await makeAuthenticatedRequest(`${HTTPS_HOST}/ProfileScan/Scan/UserProfileToFollow/Add?accept=text/plain`, 'POST', postData, successMsg, errorMsg);
+			await makeAuthenticatedRequest(`${HTTPS_HOST}/CustomerUserActions/Profile/Follow?accept=text/plain`, 'POST', postData, successMsg, errorMsg);
 	
         } catch (error) {
             console.error('Error following profile:', error);
@@ -284,19 +284,19 @@ async function matchToJob() {
 	const profileUrl = document.getElementById('profile-url').value.trim();
 	if (jobUrl && profileUrl) {
 		// Wrap sendMessage in a promise to handle asynchronous response
-		var url = `https://localhost:7017/SmartProfile/SmartProfile/MatchToJob?jobUniqueUrl=${encodeURIComponent(jobUrl)}&profileUniqueId=${encodeURIComponent(profileUrl)}&profileSourceType=1`;
+		var url = `https://localhost:7017/CustomerUserActions/Profile/MatchToJob?jobUniqueUrl=${encodeURIComponent(jobUrl)}&profileUniqueUrl=${encodeURIComponent(profileUrl)}&profileSourceType=1`;
 		const data = await makeAuthenticatedRequest(url, 'GET', null, null, null);
 		displayScrapedData(data);
 	}
 }
 
 async function showLatestUpdates() {
-	if (jobUrl && profileUrl) {
+
 		// Wrap sendMessage in a promise to handle asynchronous response
-		var url = `https://localhost:7017/SmartProfile/SmartProfile/Stats/GetLatestUpdatedProfiles`;
+		var url = `https://localhost:7017/CustomerUserActions/Profile/Stats/GetLatestUpdatedProfiles/10`;
 		const data = await makeAuthenticatedRequest(url, 'GET', null, null, null);
 	    displayScrapedData(data);
-	}
+
 }
 
 async function generateContact() {
@@ -304,7 +304,7 @@ async function generateContact() {
 	const profileUrl = document.getElementById('profile-url').value.trim();
 	if (jobUrl && profileUrl) {
 		// Wrap sendMessage in a promise to handle asynchronous response
-		var url = `https://localhost:7017/SmartProfile/SmartProfile/GenerateContact?jobUniqueUrl=${encodeURIComponent(jobUrl)}&profileUniqueId=${encodeURIComponent(profileUrl)}&profileSourceType=1`;
+		var url = `https://localhost:7017/CustomerUserActions/Profile/GenerateContactProfile?jobUniqueUrl=${encodeURIComponent(jobUrl)}&profileUniqueUrl=${encodeURIComponent(profileUrl)}&profileSourceType=1`;
 		const data = await makeAuthenticatedRequest(url, 'GET', null, null, null);
 		displayScrapedData(data);
 	}

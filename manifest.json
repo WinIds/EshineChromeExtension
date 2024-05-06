@@ -4,7 +4,6 @@
   "version": "1.0",
   "default_locale": "en",
   "description": "Upgrade your LinkedIn experience with HRJet",
-  "host_permissions": ["http://127.0.0.1:5000/"],
   "icons": {
     "48": "icons/icon.png"
   },

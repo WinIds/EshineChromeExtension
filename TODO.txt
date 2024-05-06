@@ -1,0 +1,3 @@
+- Remove the first small screen box (login\register..)
+- Change "See Latest Data" To "Current Profile Info" 
+- "Current Profile Info"  - make enabled only when we have stats for current linked in profile
