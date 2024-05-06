@@ -1,3 +1,7 @@
 - Remove the first small screen box (login\register..)
 - Change "See Latest Data" To "Current Profile Info" 
 - "Current Profile Info"  - make enabled only when we have stats for current linked in profile
+- make login page - remember my user password by chrome
+- Follow - Make enabled if current profile is not followed,
+  if current profile is followed - change to StopFollow
+  - 
